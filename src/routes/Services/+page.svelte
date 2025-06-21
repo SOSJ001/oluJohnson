@@ -1,6 +1,8 @@
 <script>
+	// @ts-ignore
 	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { CreditCardIcon, HeadphonesIcon, PrinterIcon } from 'svelte-feather-icons';
 </script>
 
 <!-- Breadcrumb -->
@@ -23,7 +25,10 @@
 			</div>
 
 			<!-- Image Section -->
-			<div class="animate-fade-out relative md:w-1/2 md:h-[400px] h-[300px] w-full bg-cover rounded-lg" style="background-image: url('/4111232.png');">
+			<div
+				class="animate-fade-out relative h-[300px] w-full rounded-lg bg-cover md:h-[400px] md:w-1/2"
+				style="background-image: url('/4111232.png');"
+			>
 				<!-- <img
 					src="/4111232.png"
 					alt="services-hero"
@@ -35,55 +40,72 @@
 	</section>
 
 	<!-- Hardware Repair Section -->
-	<section class="my-10">
+	<section class="my-10 by-gray-100">
 		<h2 class="mb-6 text-2xl font-bold text-blue-600">Hardware Repair</h2>
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 			<!-- Printer Repair -->
 			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
+				class="grid transform rounded-lg bg-gray-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-print text-4xl"></i>
+				<!--Icon  -->
+				<div class="mb-4 flex text-gray-100">
+					<span class="rounded-full bg-purple-600 p-1"><PrinterIcon /></span>
 				</div>
-				<h3 class="mb-2 text-xl font-bold">Printer Repair</h3>
-				<p class="mb-4">Certified repairs for HP, Canon, Epson, and more.</p>
-				<a
-					href="#"
-					class="rounded bg-purple-600 px-4 py-2 font-bold text-white transition hover:bg-purple-700"
-					>Request Repair</a
-				>
+				<div>
+					<h3 class="mb-2 text-xl font-bold">Printer Repair</h3>
+					<p class="mb-4">Certified repairs for HP, Canon, Epson, and more.</p>
+				</div>
+				<div>
+					<a
+						href="#"
+						class="rounded bg-purple-600 px-4 py-2 font-bold text-white transition hover:bg-purple-700"
+						>Request Repair</a
+					>
+				</div>
 			</div>
 
 			<!-- Cheque Encoder Service -->
 			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
+				class=" grid transform rounded-lg bg-gray-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-book-open text-4xl"></i>
+				<div class="mb-4 flex text-gray-100">
+					<span class="rounded-full bg-purple-600 p-1"> <CreditCardIcon /> </span>
 				</div>
-				<h3 class="mb-2 text-xl font-bold">Cheque Encoder Service</h3>
-				<p class="mb-4">Maintenance and support for cheque encoding devices.</p>
-				<a
-					href="#"
-					class="rounded bg-purple-600 px-4 py-2 font-bold text-white transition hover:bg-purple-700"
-					>Book Service</a
-				>
+				<div>
+					<h3 class="mb-2 text-xl font-bold">Cheque Encoder Service</h3>
+					<p class="mb-4">Maintenance and support for cheque encoding devices.</p>
+				</div>
+				<div>
+					<a
+						href="#"
+						class="rounded bg-purple-600 px-4 py-2 font-bold text-white transition hover:bg-purple-700"
+						>Book Service</a
+					>
+				</div>
 			</div>
 
 			<!-- On-Site Support -->
 			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
+				class="grid transform rounded-lg bg-gray-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-user-hard-hat text-4xl"></i>
+				<div>
+					<div class="mb-4 flex text-gray-100">
+						<span class="rounded-full bg-purple-600 p-1"> <HeadphonesIcon /> </span>
+					</div>
 				</div>
-				<h3 class="mb-2 text-xl font-bold">On-Site Support</h3>
-				<p class="mb-4">Fast response for urgent hardware issues.</p>
-				<a
-					href="#"
-					class="rounded bg-purple-600 px-4 py-2 font-bold text-white transition hover:bg-purple-700"
-					>Contact Team</a
-				>
+
+				<div>
+					<h3 class="mb-2 text-xl font-bold">On-Site Support</h3>
+					<p class="mb-4">Fast response for urgent hardware issues.</p>
+				</div>
+
+				<div>
+					<a
+						href="#"
+						class="rounded bg-purple-600 px-4 py-2 font-bold text-white transition hover:bg-purple-700"
+						>Contact Team</a
+					>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -94,7 +116,7 @@
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 			<!-- Tasmal x Encoder -->
 			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
+				class="transform rounded-lg bg-purple-50 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
 				<div class="mb-4 flex items-center justify-center text-purple-500">
 					<i class="fas fa-shield-alt text-4xl"></i>
@@ -110,7 +132,7 @@
 
 			<!-- Integration Services -->
 			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
+				class="bg-purple-100 transform rounded-lg p-6 shadow-md transition duration-300 hover:scale-105"
 			>
 				<div class="mb-4 flex items-center justify-center text-purple-500">
 					<i class="fas fa-code-branch text-4xl"></i>
@@ -132,34 +154,34 @@
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 			<!-- Consultation -->
 			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
+				class="transform rounded-lg bg-gray-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
 				<div class="mb-4 flex items-center justify-center text-purple-500">
 					<i class="fas fa-phone-alt text-4xl"></i>
 				</div>
-				<h3 class="mb-2 text-xl font-bold">Consultation</h3>
+				<h3 class="mb-2 text-xl font-bold">1. Consultation</h3>
 				<p class="mb-4">Discuss your needs with our experts.</p>
 			</div>
 
 			<!-- Service Delivery -->
 			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
+				class="transform rounded-lg bg-purple-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
 				<div class="mb-4 flex items-center justify-center text-purple-500">
 					<i class="fas fa-users text-4xl"></i>
 				</div>
-				<h3 class="mb-2 text-xl font-bold">Service Delivery</h3>
+				<h3 class="mb-2 text-xl font-bold">2. Service Delivery</h3>
 				<p class="mb-4">Certified technicians handle your request.</p>
 			</div>
 
 			<!-- Quality Assurance -->
 			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
+				class="transform rounded-lg bg-purple-50 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
 				<div class="mb-4 flex items-center justify-center text-purple-500">
 					<i class="fas fa-shield-check text-4xl"></i>
 				</div>
-				<h3 class="mb-2 text-xl font-bold">Quality Assurance</h3>
+				<h3 class="mb-2 text-xl font-bold">3. Quality Assurance</h3>
 				<p class="mb-4">Every service is tested and guaranteed.</p>
 			</div>
 		</div>
