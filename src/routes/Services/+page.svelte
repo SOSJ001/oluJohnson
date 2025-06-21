@@ -2,7 +2,7 @@
 	// @ts-ignore
 	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { CreditCardIcon, HeadphonesIcon, PrinterIcon } from 'svelte-feather-icons';
+	import { CreditCardIcon, HeadphonesIcon, LinkIcon, PhoneIncomingIcon, PrinterIcon, ShieldIcon, ThumbsUpIcon, TruckIcon } from 'svelte-feather-icons';
 </script>
 
 <!-- Breadcrumb -->
@@ -118,9 +118,9 @@
 			<div
 				class="transform rounded-lg bg-purple-50 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-shield-alt text-4xl"></i>
-				</div>
+			<div class="flex items-center justify-start mb-4 text-gray-100">
+				<span class="rounded-full bg-purple-600 p-1"><ShieldIcon /></span>
+			  </div>
 				<h3 class="mb-2 text-xl font-bold">Tasmal x Encoder</h3>
 				<p class="mb-4">Secure cheque encoding for banks and institutions.</p>
 				<a
@@ -134,9 +134,9 @@
 			<div
 				class="bg-purple-100 transform rounded-lg p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-code-branch text-4xl"></i>
-				</div>
+			<div class="flex items-center justify-start mb-4 text-gray-100">
+				<span class="rounded-full bg-purple-600 p-1"><LinkIcon /></span>
+			  </div>
 				<h3 class="mb-2 text-xl font-bold">Integration Services</h3>
 				<p class="mb-4">Seamless software integration for your workflow.</p>
 				<a
@@ -156,9 +156,9 @@
 			<div
 				class="transform rounded-lg bg-gray-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-phone-alt text-4xl"></i>
-				</div>
+			<div class="mb-4 flex text-gray-100">
+				<span class="rounded-full bg-purple-600 p-1"><PhoneIncomingIcon /></span>
+			</div>
 				<h3 class="mb-2 text-xl font-bold">1. Consultation</h3>
 				<p class="mb-4">Discuss your needs with our experts.</p>
 			</div>
@@ -167,9 +167,9 @@
 			<div
 				class="transform rounded-lg bg-purple-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-users text-4xl"></i>
-				</div>
+			<div class="mb-4 flex text-gray-100">
+				<span class="rounded-full bg-purple-600 p-1"><TruckIcon /></span>
+			</div>
 				<h3 class="mb-2 text-xl font-bold">2. Service Delivery</h3>
 				<p class="mb-4">Certified technicians handle your request.</p>
 			</div>
@@ -178,9 +178,9 @@
 			<div
 				class="transform rounded-lg bg-purple-50 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-shield-check text-4xl"></i>
-				</div>
+			<div class="mb-4 flex text-gray-100">
+				<span class="rounded-full bg-purple-600 p-1"><ThumbsUpIcon /></span>
+			</div>
 				<h3 class="mb-2 text-xl font-bold">3. Quality Assurance</h3>
 				<p class="mb-4">Every service is tested and guaranteed.</p>
 			</div>
