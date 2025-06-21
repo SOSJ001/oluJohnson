@@ -7,6 +7,7 @@
 		'/zenith.png',
 		'/uba.png',
 		'vista.png',
+		'/eco.png',
 		'/limkokwingUni.png',
 		'/vitaFoam.png'
 	];
