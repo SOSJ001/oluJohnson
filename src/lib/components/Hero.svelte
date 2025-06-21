@@ -1,3 +1,7 @@
+<script>
+	import BreadCrumb from "./BreadCrumb.svelte";
+
+</script>
 <section class="py-10 md:flex grid items-center justify-center">
   <div class="container mx-auto px-4 text-center">
     <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-700 drop-shadow-lg">Expert Hardware Repair & Custom Software</h1>

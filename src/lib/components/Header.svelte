@@ -8,10 +8,10 @@
   </div>
   <div class="hidden lg:flex lg:items-center lg:w-auto w-full">
     <div class="text-sm lg:flex-grow">
-      <a href="#home" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
+      <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-home mr-1"></i> Home
       </a>
-      <a href="#services" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
+      <a href="/Services" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-wrench mr-1"></i> Services
       </a>
       <a href="#tasmal-x" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
