@@ -9,14 +9,15 @@
 		'vista.png',
 		'/eco.png',
 		'/limkokwingUni.png',
-		'/vitaFoam.png'
+		'/vitaFoam.png',
+		'/saveTheChildren.png',
 	];
 </script>
 
 <section class="py-10">
 	<div class="container mx-auto px-4">
 		<h2 class="mb-8 text-2xl font-bold">Trusted By</h2>
-		<div class="flex space-x-10 overflow-x-auto md:pl-14 pb-4 md:items-center md:justify-center">
+		<div class="flex flex-row space-x-10 overflow-x-auto pb-4 md:items-center md:justify-center md:pl-60">
 			{#each companies as i}
 				<img
 					loading="lazy"
