@@ -1,4 +1,6 @@
 <script>
+	import { AirplayIcon, CastIcon } from "svelte-feather-icons";
+
 	let companies = [
 		'/Bloomlogo.png',
 		'/gtbank.png',
