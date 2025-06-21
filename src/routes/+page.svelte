@@ -7,6 +7,7 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import Services from '$lib/components/services.svelte';
 	import TrustedCompanies from '$lib/components/TrustedCompanies.svelte';
+	import WhyChooseUs from '$lib/components/whyChooseUs.svelte';
 </script>
 
 <div class="bg-gray-100 font-sans leading-normal tracking-normal">
@@ -20,10 +21,13 @@
 	<Services />
 
 	<!-- Trusted By Section -->
-	<TrustedCompanies/>
+	<TrustedCompanies />
 
+	<!-- why choose us -->
+	<WhyChooseUs />
+    
 	<!-- Footer -->
-	<Footer/>
+	<Footer />
 </div>
 
 <style>
