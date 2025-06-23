@@ -70,7 +70,7 @@
     <!-- Visual Demonstration -->
     <section class="mb-10">
       <h2 class="text-2xl font-bold mb-6">See Tasmal x in Action</h2>
-      <img src="https://source.unsplash.com/random/1600x900/?software" alt="Tasmal x in Action" class="w-full h-full object-cover rounded-lg shadow-lg" />
+      <img src="/Tasmal-X_overview.png" alt="Tasmal x in Action" class="w-full h-full object-cover rounded-lg shadow-lg" />
     </section>
 
     <!-- Call-to-Action -->
