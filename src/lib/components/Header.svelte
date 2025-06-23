@@ -14,8 +14,8 @@
       <a href="/Services" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-wrench mr-1"></i> Services
       </a>
-      <a href="#tasmal-x" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
-        <i class="fas fa-shield-alt mr-1"></i> Tasmal x
+      <a href="/Tasmal-X" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
+        <i class="fas fa-shield-alt mr-1"></i> Tasmal-X
       </a>
       <a href="#industries" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-industry mr-1"></i> Industries
