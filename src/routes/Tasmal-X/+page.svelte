@@ -1,3 +1,7 @@
+<script>
+	import Footer from "$lib/components/Footer.svelte";
+
+</script>
 <!-- Main Content -->
 <main class="container mx-auto px-4 py-10">
 
@@ -83,3 +87,4 @@
     </section>
 
   </main>
+  <Footer />
