@@ -74,7 +74,7 @@
     <!-- Visual Demonstration -->
     <section class="mb-10">
       <h2 class="text-2xl font-bold mb-6">See Tasmal x in Action</h2>
-      <img src="/Tasmal-X_overview.png" alt="Tasmal x in Action" class="w-full h-full object-cover rounded-lg shadow-lg" />
+      <img loading="lazy" src="/Tasmal-X_overview.png" alt="Tasmal x in Action" class="w-full h-full object-cover rounded-lg shadow-lg" />
     </section>
 
     <!-- Call-to-Action -->
