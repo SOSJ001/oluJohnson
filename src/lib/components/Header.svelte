@@ -20,7 +20,7 @@
       <a href="Industries" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-industry mr-1"></i> Industries
       </a>
-      <a href="#brands" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
+      <a href="/Brands" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-cubes mr-1"></i> Brands
       </a>
       <a href="#about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
