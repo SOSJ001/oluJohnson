@@ -17,18 +17,14 @@
 <!-- Main Content -->
 <main class="container mx-auto px-4">
 	<!-- Hero Section -->
-	<section class="relative mb-5 bg-gray-300 p-3 text-gray-800 rounded-lg md:px-10 md:py-20">
-		<img
-			src="/Tasmal_X_logo.png"
-			alt="Tasmal X Logo"
-			class="absolute inset-0 h-full w-full object-cover opacity-10"
-		/>
+	<section style="background-image: url('/purple-Bg.jpg');" class="bg-cover bg-no-repeat relative mb-5 rounded-lg bg-gray-800 text-gray-200 py-6 px-3 md:px-10 md:py-20">
+		
 		<h1 class="mb-6 text-4xl font-bold md:text-5xl">Tasmal x Cheque Encoder</h1>
 		<p class="mb-8 text-xl">
 			Industry-leading cheque encoding software trusted by banks and institutions worldwide.
 			Advanced security, seamless integration, and global compliance.
 		</p>
-		<div class="flex gap-4">
+		<div class="flex gap-4 text-center">
 			<a
 				href="#"
 				class="rounded bg-purple-600 px-6 py-3 font-bold text-white transition hover:bg-purple-700"

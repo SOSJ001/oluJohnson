@@ -17,7 +17,7 @@
       <a href="/Tasmal-X" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-shield-alt mr-1"></i> Tasmal-X
       </a>
-      <a href="#industries" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
+      <a href="Industries" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-industry mr-1"></i> Industries
       </a>
       <a href="#brands" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
@@ -26,7 +26,7 @@
       <a href="#about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-info-circle mr-1"></i> About
       </a>
-      <a href="#contact" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
+      <a href="/Contact" class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-purple-700 mr-6">
         <i class="fas fa-envelope mr-1"></i> Contact
       </a>
     </div>

@@ -12,7 +12,7 @@
 <main class="container mx-auto px-4">
 	<!--Services Hero -->
 	<section
-		class="relative rounded-lg bg-gradient-to-r from-purple-500 via-purple-400 to-purple-300 py-10"
+		class="bg-[url('/purple-Bg.jpg')] bg-cover rounded-lg bg-gradient-to-r from-purple-500 via-purple-400 to-purple-300 py-10"
 	>
 		<div class="container mx-auto flex flex-col items-center justify-between px-4 md:flex-row">
 			<!-- Text Content -->
