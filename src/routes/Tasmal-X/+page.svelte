@@ -17,7 +17,12 @@
 <!-- Main Content -->
 <main class="container mx-auto px-4">
 	<!-- Hero Section -->
-	<section class="mb-5">
+	<section class="relative mb-5 bg-gray-300 p-3 text-gray-800 rounded-lg md:px-10 md:py-20">
+		<img
+			src="/Tasmal_X_logo.png"
+			alt="Tasmal X Logo"
+			class="absolute inset-0 h-full w-full object-cover opacity-10"
+		/>
 		<h1 class="mb-6 text-4xl font-bold md:text-5xl">Tasmal x Cheque Encoder</h1>
 		<p class="mb-8 text-xl">
 			Industry-leading cheque encoding software trusted by banks and institutions worldwide.
@@ -145,46 +150,56 @@
 		<h2 class="mb-6 text-2xl font-bold">System Requirements</h2>
 		<div class="overflow-x-auto">
 			<table class="min-w-full divide-y divide-gray-200">
-			  <thead class="bg-gray-50">
-				<tr>
-				  <th
-					scope="col"
-					class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase sm:px-4 md:px-6 lg:px-8"
-					>
-					Component
-				  </th>
-				  <th
-					scope="col"
-					class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase sm:px-4 md:px-6 lg:px-8"
-					>
-					Requirement
-				  </th>
-				</tr>
-			  </thead>
-			  <tbody class="divide-y divide-gray-200 bg-white">
-				<tr>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">OS</td>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Windows 10 pro or Windows 11 pro</td>
-				</tr>
-				<tr>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Processor</td>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Intel i5 or equivalent (1.9 GHz+)</td>
-				</tr>
-				<tr>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Memory</td>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">8 GB RAM (16 GB recommended)</td>
-				</tr>
-				<tr>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Storage</td>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">250+ GB free space (HDD recommended)</td>
-				</tr>
-				<tr>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Peripherals</td>
-				  <td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">MICR-enabled cheque scanner</td>
-				</tr>
-			  </tbody>
+				<thead class="bg-gray-50">
+					<tr>
+						<th
+							scope="col"
+							class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase sm:px-4 md:px-6 lg:px-8"
+						>
+							Component
+						</th>
+						<th
+							scope="col"
+							class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase sm:px-4 md:px-6 lg:px-8"
+						>
+							Requirement
+						</th>
+					</tr>
+				</thead>
+				<tbody class="divide-y divide-gray-200 bg-white">
+					<tr>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">OS</td>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8"
+							>Windows 10 pro or Windows 11 pro</td
+						>
+					</tr>
+					<tr>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Processor</td>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8"
+							>Intel i5 or equivalent (1.9 GHz+)</td
+						>
+					</tr>
+					<tr>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Memory</td>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8"
+							>8 GB RAM (16 GB recommended)</td
+						>
+					</tr>
+					<tr>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Storage</td>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8"
+							>250+ GB free space (HDD recommended)</td
+						>
+					</tr>
+					<tr>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8">Peripherals</td>
+						<td class="px-6 py-4 whitespace-nowrap sm:px-4 md:px-6 lg:px-8"
+							>MICR-enabled cheque scanner</td
+						>
+					</tr>
+				</tbody>
 			</table>
-		  </div>
+		</div>
 	</section>
 
 	<!-- Visual Demonstration -->
