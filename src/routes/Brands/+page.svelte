@@ -22,7 +22,7 @@
         <!-- HP -->
         <div class="bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition duration-300">
           <div class="flex items-center justify-center mb-4 text-purple-500">
-            <i class="fas fa-print text-4xl"></i>
+            <i class="fas fa-print text-4xl"><img src="/HP-Logo.png" class="h-[36px]" alt=""></i>
           </div>
           <h3 class="text-xl font-bold mb-2">HP</h3>
           <p class="mb-4">Printers, Scanners, Cheque Encoders</p>
