@@ -141,7 +141,7 @@
 					</span>
 				</Icon>
 				<h3 class="mb-2 text-xl font-bold">Admin Priviledges</h3>
-				<p class="mb-4">Instant management of both active and Dormant Bank Branhes.</p>
+				<p class="mb-4">Instant management of both active and Dormant Bank Branches.</p>
 			</div>
 		</div>
 	</section>
