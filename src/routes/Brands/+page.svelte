@@ -11,17 +11,6 @@
 		style="background-image: url('/purple-Bg.jpg');"
 		class="relative mb-5 rounded-lg bg-gray-800 bg-cover bg-no-repeat px-3 py-6 text-gray-200 md:px-10 md:py-20"
 	>
-<<<<<<< HEAD
-		<h1 class="mb-6 text-4xl font-bold md:text-5xl">Brands We Service</h1>
-		<p class="text-lg">
-			We expertly repair and support a wide range of leading hardware brands for offices, banks, and
-			institutions.
-		</p>
-		<p>
-			Our certified technicians use genuine parts and proven processes to ensure reliability and
-			performance.
-		</p>
-=======
 		<div class="animate-fade-in">
 			<h1 class="mb-6 text-4xl font-bold md:text-5xl">Brands We Service</h1>
 			<p class="text-lg">
@@ -33,7 +22,6 @@
 				performance.
 			</p>
 		</div>
->>>>>>> about
 	</section>
 
 	<!-- Major Brands Section -->
