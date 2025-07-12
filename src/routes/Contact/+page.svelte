@@ -47,7 +47,7 @@
 				<span class="block"
 					>Email: <a
 						href="mailto:service.engineer@olujohnsonbusinesstechnicalservices.com"
-						class="underline hover:text-purple-700"
+						class="break-all underline hover:text-purple-700"
 						>service.engineer@olujohnsonbusinesstechnicalservices.com</a
 					></span
 				>
@@ -172,8 +172,8 @@
 			}}
 			class="w-full rounded bg-purple-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-purple-700"
 			>Send Message</button
-			>
-			<p class="mt-4 text-center text-xs text-gray-500">Our team responds within 1 business day.</p>
+		>
+		<p class="mt-4 text-center text-xs text-gray-500">Our team responds within 1 business day.</p>
 	</form>
 </main>
 <Footer />
