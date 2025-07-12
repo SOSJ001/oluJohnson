@@ -1,4 +1,5 @@
 <script>
+	import { page } from '$app/stores';
 	let mobileOpen = false;
 </script>
 
@@ -7,7 +8,6 @@
 >
 	<div class="text-xl font-semibold tracking-tight text-purple-700">Olu Johnson</div>
 	<div class="block lg:hidden">
-		<!-- svelte-ignore a11y_consider_explicit_label -->
 		<button
 			class="text-gray-500 hover:text-purple-700 focus:outline-none"
 			on:click={() => (mobileOpen = !mobileOpen)}
@@ -32,55 +32,69 @@
 		<div class="text-sm lg:flex-grow">
 			<a
 				href="/"
-				class="mt-4 mr-6 block text-gray-700 hover:text-purple-700 lg:mt-0 lg:inline-block"
+				class="mt-4 mr-6 block lg:mt-0 lg:inline-block {$page.url.pathname === '/'
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 			>
 				<i class="fas fa-home mr-1"></i> Home
 			</a>
 			<a
 				href="/Services"
-				class="mt-4 mr-6 block text-gray-700 hover:text-purple-700 lg:mt-0 lg:inline-block"
+				class="mt-4 mr-6 block lg:mt-0 lg:inline-block {$page.url.pathname.startsWith('/Services')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 			>
 				<i class="fas fa-wrench mr-1"></i> Services
 			</a>
 			<a
 				href="/Tasmal-X"
-				class="mt-4 mr-6 block text-gray-700 hover:text-purple-700 lg:mt-0 lg:inline-block"
+				class="mt-4 mr-6 block lg:mt-0 lg:inline-block {$page.url.pathname.startsWith('/Tasmal-X')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 			>
 				<i class="fas fa-shield-alt mr-1"></i> Tasmal-X
 			</a>
 			<a
-				href="Industries"
-				class="mt-4 mr-6 block text-gray-700 hover:text-purple-700 lg:mt-0 lg:inline-block"
+				href="/Industries"
+				class="mt-4 mr-6 block lg:mt-0 lg:inline-block {$page.url.pathname.startsWith('/Industries')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 			>
 				<i class="fas fa-industry mr-1"></i> Industries
 			</a>
 			<a
 				href="/Brands"
-				class="mt-4 mr-6 block text-gray-700 hover:text-purple-700 lg:mt-0 lg:inline-block"
+				class="mt-4 mr-6 block lg:mt-0 lg:inline-block {$page.url.pathname.startsWith('/Brands')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 			>
 				<i class="fas fa-cubes mr-1"></i> Brands
 			</a>
 			<a
 				href="/About"
-				class="mt-4 mr-6 block text-gray-700 hover:text-purple-700 lg:mt-0 lg:inline-block"
+				class="mt-4 mr-6 block lg:mt-0 lg:inline-block {$page.url.pathname.startsWith('/About')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 			>
 				<i class="fas fa-info-circle mr-1"></i> About
 			</a>
 			<a
 				href="/Contact"
-				class="mt-4 mr-6 block text-gray-700 hover:text-purple-700 lg:mt-0 lg:inline-block"
+				class="mt-4 mr-6 block lg:mt-0 lg:inline-block {$page.url.pathname.startsWith('/Contact')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 			>
 				<i class="fas fa-envelope mr-1"></i> Contact
 			</a>
 		</div>
 		<div class="flex space-x-4">
 			<a
-				href="mailto:service.engineer@olujohnsonbusinesstechnicalservices.com"
+				href="#"
 				class="inline-block rounded border bg-purple-600 px-4 py-2 text-sm text-white transition hover:bg-purple-700"
 				>Book Online</a
 			>
 			<a
-				href="tel:+23278220326"
+				href="#"
 				class="inline-block rounded border border-purple-600 px-4 py-2 text-sm text-purple-600 transition hover:bg-purple-100"
 				>Get a Quote</a
 			>
@@ -92,37 +106,51 @@
 		>
 			<a
 				href="/"
-				class="mb-4 text-gray-700 hover:text-purple-700"
+				class="mb-4 {$page.url.pathname === '/'
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 				on:click={() => (mobileOpen = false)}><i class="fas fa-home mr-1"></i> Home</a
 			>
 			<a
 				href="/Services"
-				class="mb-4 text-gray-700 hover:text-purple-700"
+				class="mb-4 {$page.url.pathname.startsWith('/Services')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 				on:click={() => (mobileOpen = false)}><i class="fas fa-wrench mr-1"></i> Services</a
 			>
 			<a
 				href="/Tasmal-X"
-				class="mb-4 text-gray-700 hover:text-purple-700"
+				class="mb-4 {$page.url.pathname.startsWith('/Tasmal-X')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 				on:click={() => (mobileOpen = false)}><i class="fas fa-shield-alt mr-1"></i> Tasmal-X</a
 			>
 			<a
-				href="Industries"
-				class="mb-4 text-gray-700 hover:text-purple-700"
+				href="/Industries"
+				class="mb-4 {$page.url.pathname.startsWith('/Industries')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 				on:click={() => (mobileOpen = false)}><i class="fas fa-industry mr-1"></i> Industries</a
 			>
 			<a
 				href="/Brands"
-				class="mb-4 text-gray-700 hover:text-purple-700"
+				class="mb-4 {$page.url.pathname.startsWith('/Brands')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 				on:click={() => (mobileOpen = false)}><i class="fas fa-cubes mr-1"></i> Brands</a
 			>
 			<a
 				href="/About"
-				class="mb-4 text-gray-700 hover:text-purple-700"
+				class="mb-4 {$page.url.pathname.startsWith('/About')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 				on:click={() => (mobileOpen = false)}><i class="fas fa-info-circle mr-1"></i> About</a
 			>
 			<a
 				href="/Contact"
-				class="mb-4 text-gray-700 hover:text-purple-700"
+				class="mb-4 {$page.url.pathname.startsWith('/Contact')
+					? 'font-bold text-purple-700 underline'
+					: 'text-gray-700 hover:text-purple-700'}"
 				on:click={() => (mobileOpen = false)}><i class="fas fa-envelope mr-1"></i> Contact</a
 			>
 			<div class="mt-4 flex flex-col space-y-2">
