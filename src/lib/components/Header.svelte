@@ -155,12 +155,12 @@
 			>
 			<div class="mt-4 flex flex-col space-y-2">
 				<a
-					href="#"
+					href="mailto:service.engineer@olujohnsonbusinesstechnicalservices.com"
 					class="inline-block rounded border bg-purple-600 px-4 py-2 text-sm text-white transition hover:bg-purple-700"
 					>Book Online</a
 				>
 				<a
-					href="#"
+					href="tel:+23278220326"
 					class="inline-block rounded border border-purple-600 px-4 py-2 text-sm text-purple-600 transition hover:bg-purple-100"
 					>Get a Quote</a
 				>
