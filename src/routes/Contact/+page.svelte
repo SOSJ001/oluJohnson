@@ -6,7 +6,7 @@
 <BreadCrumb />
 <!-- Hero Section -->
 
-<main class="container mx-auto px-4 py-8">
+<main class="container mx-auto px-4">
 <section
 	style="background-image: url('/purple-Bg.jpg');"
 	class="relative mb-5 rounded-lg bg-gray-800 bg-cover bg-no-repeat px-3 py-6 text-gray-200 md:px-10 md:py-20"
