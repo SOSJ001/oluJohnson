@@ -2,7 +2,9 @@
 	let mobileOpen = false;
 </script>
 
-<nav class="relative flex flex-wrap items-center justify-between bg-gray-100 p-6 shadow-md">
+<nav
+	class="fixed top-0 left-0 z-50 flex w-full flex-wrap items-center justify-between bg-gray-100 p-6 shadow-md"
+>
 	<div class="text-xl font-semibold tracking-tight text-purple-700">Olu Johnson</div>
 	<div class="block lg:hidden">
 		<!-- svelte-ignore a11y_consider_explicit_label -->
@@ -138,6 +140,7 @@
 		</div>
 	{/if}
 </nav>
+<div class="h-24"></div>
 
 <style>
 	@keyframes fade-in {
