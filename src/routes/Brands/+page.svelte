@@ -44,11 +44,7 @@
 				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
 			>
 				<div class="mb-4 flex items-center justify-center text-purple-500">
-<<<<<<< HEAD
-					<i class="fas fa-print text-4xl"><img src="/Canon.png" class="h-[36px]" alt="" /></i>
-=======
 					<i class="fas fa-camera text-4xl"></i>
->>>>>>> about
 				</div>
 				<h3 class="mb-2 text-xl font-bold">Canon</h3>
 				<p class="mb-4">Printers, Scanners</p>
@@ -59,11 +55,7 @@
 				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
 			>
 				<div class="mb-4 flex items-center justify-center text-purple-500">
-<<<<<<< HEAD
-					<i class="fas fa-print text-4xl"><img src="/Epson-Logo.png" class="h-[36px]" alt="" /></i>
-=======
 					<i class="fas fa-check-square text-4xl"></i>
->>>>>>> about
 				</div>
 				<h3 class="mb-2 text-xl font-bold">Epson</h3>
 				<p class="mb-4">Cheque Encoders, Printers</p>
@@ -74,11 +66,7 @@
 				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
 			>
 				<div class="mb-4 flex items-center justify-center text-purple-500">
-<<<<<<< HEAD
-					<i class="fas fa-print text-4xl"><img src="/Dell-Logo.png" class="h-[36px]" alt="" /></i>
-=======
 					<i class="fas fa-desktop text-4xl"></i>
->>>>>>> about
 				</div>
 				<h3 class="mb-2 text-xl font-bold">Dell</h3>
 				<p class="mb-4">Workstations, Laptops</p>
@@ -154,8 +142,6 @@
 	</section>
 </main>
 <Footer />
-<<<<<<< HEAD
-=======
 
 <style>
 	@keyframes fadeIn {
@@ -173,4 +159,3 @@
 		animation: fadeIn 1s ease-out forwards;
 	}
 </style>
->>>>>>> about
