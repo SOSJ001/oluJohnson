@@ -4,7 +4,10 @@
 </script>
 
 <!-- Hero Section -->
-<section style="background-image: url('/purple-Bg.jpg');" class="bg-no-repeat bg-gradient-to-br rounded-lg from-purple-600 via-purple-700 to-purple-800 py-16 text-white">
+<section
+	style="background-image: url('/purple-Bg.jpg');"
+	class="rounded-lg bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 bg-no-repeat py-16 text-white"
+>
 	<div class="animate-fade-in container mx-auto px-4 text-center">
 		<h1 class="mb-6 text-4xl font-bold md:text-6xl">About Olu Johnson</h1>
 		<p class="mx-auto max-w-3xl text-xl opacity-90 md:text-2xl">
@@ -158,36 +161,36 @@
 			<div class="grid gap-8 md:grid-cols-3">
 				<div class="rounded-xl bg-gray-50 p-6 text-center transition-shadow hover:shadow-lg">
 					<img
-						src="https://randomuser.me/api/portraits/women/44.jpg"
-						alt="Amina Diallo"
+						src="/Founder.jpeg"
+						alt="Olu Johnson"
 						class="mx-auto mb-4 h-24 w-24 rounded-full object-cover shadow"
 					/>
-					<h3 class="mb-2 text-xl font-semibold">Amina Diallo</h3>
+					<h3 class="mb-2 text-xl font-semibold">Olu Johnson</h3>
 					<p class="mb-3 font-medium text-purple-600">Lead Engineer</p>
 					<p class="text-sm text-gray-600">
-						Expert in hardware diagnostics and repair with 8+ years of experience.
+						Expert in hardware diagnostics and repair with 25+ years of experience.
 					</p>
 				</div>
 				<div class="rounded-xl bg-gray-50 p-6 text-center transition-shadow hover:shadow-lg">
 					<img
-						src="https://randomuser.me/api/portraits/men/45.jpg"
-						alt="Kwame Mensah"
+						src="/SoftwareEngineer.jpeg"
+						alt="Michael Johnson"
 						class="mx-auto mb-4 h-24 w-24 rounded-full object-cover shadow"
 					/>
-					<h3 class="mb-2 text-xl font-semibold">Kwame Mensah</h3>
+					<h3 class="mb-2 text-xl font-semibold">Michael S.O.S Johnson</h3>
 					<p class="mb-3 font-medium text-purple-600">Software Architect</p>
 					<p class="text-sm text-gray-600">
-						Specializes in custom software development and system integration.
+						Specializes in custom software development and Cyber Security.
 					</p>
 				</div>
 				<div class="rounded-xl bg-gray-50 p-6 text-center transition-shadow hover:shadow-lg">
 					<img
-						src="https://randomuser.me/api/portraits/men/46.jpg"
+						src="https://placehold.co/96x96"
 						alt="Fatou Bayo"
 						class="mx-auto mb-4 h-24 w-24 rounded-full object-cover shadow"
 					/>
-					<h3 class="mb-2 text-xl font-semibold">Fatou Bayo</h3>
-					<p class="mb-3 font-medium text-purple-600">Client Success Manager</p>
+					<h3 class="mb-2 text-xl font-semibold">Sahr Fanday</h3>
+					<p class="mb-3 font-medium text-purple-600">I.T Support</p>
 					<p class="text-sm text-gray-600">
 						Ensures exceptional customer experience and project delivery.
 					</p>

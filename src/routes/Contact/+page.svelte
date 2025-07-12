@@ -7,19 +7,19 @@
 <!-- Hero Section -->
 
 <main class="container mx-auto px-4">
-<section
-	style="background-image: url('/purple-Bg.jpg');"
-	class="relative mb-5 rounded-lg bg-gray-800 bg-cover bg-no-repeat px-3 py-6 text-gray-200 md:px-10 md:py-20"
->
-	<div class="animate-fade-in container mx-auto px-4 text-center">
-		<div class="mb-4 flex flex-col items-center justify-center">
-			<h1 class="mb-2 text-4xl font-bold md:text-5xl">Contact Us</h1>
-			<p class="mx-auto mb-2 max-w-2xl text-lg md:text-xl">
-				We're here to help. Reach out for quotes, support, or partnership inquiries.
-			</p>
+	<section
+		style="background-image: url('/purple-Bg.jpg');"
+		class="relative mb-5 rounded-lg bg-gray-800 bg-cover bg-no-repeat px-3 py-6 text-gray-200 md:px-10 md:py-20"
+	>
+		<div class="animate-fade-in container mx-auto px-4 text-center">
+			<div class="mb-4 flex flex-col items-center justify-center">
+				<h1 class="mb-2 text-4xl font-bold md:text-5xl">Contact Us</h1>
+				<p class="mx-auto mb-2 max-w-2xl text-lg md:text-xl">
+					We're here to help. Reach out for quotes, support, or partnership inquiries.
+				</p>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 	<div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
 		<!-- Contact Info Card -->
 		<div
@@ -43,28 +43,30 @@
 				>
 			</div>
 			<div class="mb-2 text-lg font-semibold">Contact Info</div>
-			<div class="mb-2 text-sm text-gray-600">
+			<div class="mb-2 text-gray-600">
 				<span class="block"
-					>Email: <a href="mailto:info@tasmal.com" class="underline hover:text-purple-700"
-						>info@tasmal.com</a
+					>Email: <a
+						href="mailto:service.engineer@olujohnsonbusinesstechnicalservices.com"
+						class="underline hover:text-purple-700"
+						>service.engineer@olujohnsonbusinesstechnicalservices.com</a
 					></span
 				>
 				<span class="block"
-					>Phone: <a href="tel:+233555132456" class="underline hover:text-purple-700"
-						>+233 555 132 456</a
-					></span
-				>
-				<span class="block">Location: Accra, Ghana</span>
+					>Phone: <a href="tel:+2328220326" class="underline hover:text-purple-700"
+						>+232 78 220 326</a
+					>
+				</span>
+				<span class="block">Location: Freetown, Sierra Leone</span>
 				<span class="block">Service Area: West Africa & International</span>
 			</div>
 			<div class="mt-3 flex gap-2">
 				<a
-					href="mailto:info@tasmal.com"
+					href="mailto:service.engineer@olujohnsonbusinesstechnicalservices.com"
 					class="rounded bg-purple-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-purple-700"
 					>Email Us</a
 				>
 				<a
-					href="tel:+233555132456"
+					href="tel:+23278220326"
 					class="rounded bg-purple-100 px-4 py-2 text-sm font-semibold text-purple-700 transition hover:bg-purple-200"
 					>Call Now</a
 				>
@@ -92,11 +94,11 @@
 				>
 			</div>
 			<div class="mb-2 text-lg font-semibold">Book Online</div>
-			<div class="mb-4 text-sm text-gray-600">
+			<div class="mb-4 text-gray-600">
 				Schedule a repair or software consultation at your convenience.
 			</div>
 			<a
-				href="#"
+				href="tel:+23278220326"
 				class="rounded bg-purple-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-purple-700"
 				>Book Appointment</a
 			>
@@ -164,11 +166,14 @@
 			></textarea>
 		</div>
 		<button
-			type="submit"
+			type="button"
+			on:click|preventDefault={() => {
+				alert('Sending message is not available yet');
+			}}
 			class="w-full rounded bg-purple-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-purple-700"
 			>Send Message</button
-		>
-		<p class="mt-4 text-center text-xs text-gray-500">Our team responds within 1 business day.</p>
+			>
+			<p class="mt-4 text-center text-xs text-gray-500">Our team responds within 1 business day.</p>
 	</form>
 </main>
 <Footer />

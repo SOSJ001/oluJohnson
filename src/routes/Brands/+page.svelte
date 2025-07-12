@@ -135,7 +135,7 @@
 			Don’t see your brand? Contact us for support with additional manufacturers.
 		</p>
 		<a
-			href="#"
+			href="mailto:service.engineer@olujohnsonbusinesstechnicalservices.com"
 			class="rounded bg-purple-600 px-6 py-3 font-bold text-white transition hover:bg-purple-700"
 			>Request Brand Support</a
 		>

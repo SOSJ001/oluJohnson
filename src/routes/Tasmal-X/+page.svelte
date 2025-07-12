@@ -29,12 +29,12 @@
 			</p>
 			<div class="flex gap-4 text-center">
 				<a
-					href="#"
+					href="mailto:service.engineer@olujohnsonbusinesstechnicalservices.com"
 					class="rounded bg-purple-600 px-6 py-3 font-bold text-white transition hover:bg-purple-700"
 					>Request Demo</a
 				>
 				<a
-					href="#"
+					href="tel:+23278220326"
 					class="rounded bg-white px-6 py-3 font-bold text-purple-600 shadow transition hover:bg-gray-100"
 					>Contact Sales</a
 				>
@@ -218,12 +218,12 @@
 		<h2 class="mb-6 text-2xl font-bold">Ready to transform your cheque processing?</h2>
 		<div class="flex gap-4">
 			<a
-				href="#"
+				href="mailto:service.engineer@olujohnsonbusinesstechnicalservices.com"
 				class="rounded bg-purple-600 px-6 py-3 font-bold text-white transition hover:bg-purple-700"
 				>Request Demo</a
 			>
 			<a
-				href="#"
+				href="tel:+23278220326"
 				class="rounded bg-white px-6 py-3 font-bold text-purple-600 shadow transition hover:bg-gray-100"
 				>Contact Sales</a
 			>
