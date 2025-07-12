@@ -17,24 +17,28 @@
 <!-- Main Content -->
 <main class="container mx-auto px-4">
 	<!-- Hero Section -->
-	<section style="background-image: url('/purple-Bg.jpg');" class="bg-cover bg-no-repeat relative mb-5 rounded-lg bg-gray-800 text-gray-200 py-6 px-3 md:px-10 md:py-20">
-		
-		<h1 class="mb-6 text-4xl font-bold md:text-5xl">Tasmal x Cheque Encoder</h1>
-		<p class="mb-8 text-xl">
-			Industry-leading cheque encoding software trusted by banks and institutions worldwide.
-			Advanced security, seamless integration, and global compliance.
-		</p>
-		<div class="flex gap-4 text-center">
-			<a
-				href="#"
-				class="rounded bg-purple-600 px-6 py-3 font-bold text-white transition hover:bg-purple-700"
-				>Request Demo</a
-			>
-			<a
-				href="#"
-				class="rounded bg-white px-6 py-3 font-bold text-purple-600 shadow transition hover:bg-gray-100"
-				>Contact Sales</a
-			>
+	<section
+		style="background-image: url('/purple-Bg.jpg');"
+		class="relative mb-5 rounded-lg bg-gray-800 bg-cover bg-no-repeat px-3 py-6 text-gray-200 md:px-10 md:py-20"
+	>
+		<div class="animate-fade-in">
+			<h1 class="mb-6 text-4xl font-bold md:text-5xl">Tasmal x Cheque Encoder</h1>
+			<p class="mb-8 text-xl">
+				Industry-leading cheque encoding software trusted by banks and institutions worldwide.
+				Advanced security, seamless integration, and global compliance.
+			</p>
+			<div class="flex gap-4 text-center">
+				<a
+					href="#"
+					class="rounded bg-purple-600 px-6 py-3 font-bold text-white transition hover:bg-purple-700"
+					>Request Demo</a
+				>
+				<a
+					href="#"
+					class="rounded bg-white px-6 py-3 font-bold text-purple-600 shadow transition hover:bg-gray-100"
+					>Contact Sales</a
+				>
+			</div>
 		</div>
 	</section>
 
@@ -227,3 +231,20 @@
 	</section>
 </main>
 <Footer />
+
+<style>
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.animate-fade-in {
+		animation: fadeIn 1s ease-out forwards;
+	}
+</style>

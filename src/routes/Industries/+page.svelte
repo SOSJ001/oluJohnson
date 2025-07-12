@@ -1,30 +1,37 @@
 <script>
-	import BreadCrumb from "$lib/components/BreadCrumb.svelte";
-import Footer from "$lib/components/Footer.svelte";
-	import Bank from "$lib/components/Industries/Bank.svelte";
-	import Offices from "$lib/components/Industries/Offices.svelte";
-	import Institutions from "$lib/components/Institutions.svelte";
-
+	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import Bank from '$lib/components/Industries/Bank.svelte';
+	import Offices from '$lib/components/Industries/Offices.svelte';
+	import Institutions from '$lib/components/Institutions.svelte';
 </script>
+
 <!-- Main Content -->
-<BreadCrumb/>
+<BreadCrumb />
 <main class="container mx-auto px-4">
 	<!-- Hero Section -->
-	<section style="background-image: url('/purple-Bg.jpg');" class="bg-cover bg-no-repeat relative mb-5 rounded-lg bg-gray-800 text-gray-200 py-6 px-3 md:px-10 md:py-20">
-		<h1 class="mb-6 text-4xl font-bold md:text-5xl">Industries Served</h1>
-		<p class="text-lg">
-			Tailored hardware repair and software solutions for key sectors across West Africa and beyond.
-		</p>
-        <p class="text-lg">
-            Discover how we add value to your industry.
-        </p>
+	<section
+		style="background-image: url('/purple-Bg.jpg');"
+		class="relative mb-5 rounded-lg bg-gray-800 bg-cover bg-no-repeat px-3 py-6 text-gray-200 md:px-10 md:py-20"
+	>
+		<div class="animate-fade-in">
+			<h1 class="mb-6 text-4xl font-bold md:text-5xl">Industries Served</h1>
+			<p class="text-lg">
+				Tailored hardware repair and software solutions for key sectors across West Africa and
+				beyond.
+			</p>
+			<p class="text-lg">Discover how we add value to your industry.</p>
+		</div>
 	</section>
 
 	<!-- Industry Tabs -->
-	<nav class="mb-10 shadow p-2 overflow-auto">
-		<ul class="flex space-x-4 ">
+	<nav class="mb-10 overflow-auto p-2 shadow">
+		<ul class="flex space-x-4">
 			<li>
-				<a href="#banks" class="border-b-2 border-purple-600 order-purple-600 pb-1 text-lg font-medium">Banks</a>
+				<a
+					href="#banks"
+					class="order-purple-600 border-b-2 border-purple-600 pb-1 text-lg font-medium">Banks</a
+				>
 			</li>
 			<li>
 				<a
@@ -43,14 +50,14 @@ import Footer from "$lib/components/Footer.svelte";
 		</ul>
 	</nav>
 
-    <!-- Banks Section -->
+	<!-- Banks Section -->
 	<Bank />
 
 	<!-- Offices Section -->
-	 <Offices/>
+	<Offices />
 
-	 <!-- Institution Section -->
-	  <Institutions />
+	<!-- Institution Section -->
+	<Institutions />
 
 	<!-- Call-to-Action -->
 	<section class="mb-10">
@@ -63,3 +70,20 @@ import Footer from "$lib/components/Footer.svelte";
 	</section>
 </main>
 <Footer />
+
+<style>
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.animate-fade-in {
+		animation: fadeIn 1s ease-out forwards;
+	}
+</style>
