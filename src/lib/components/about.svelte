@@ -185,7 +185,7 @@
 				</div>
 				<div class="rounded-xl bg-gray-50 p-6 text-center transition-shadow hover:shadow-lg">
 					<img
-						src="https://placehold.co/96x96"
+						src="/IT_Boss.jpeg"
 						alt="Fatou Bayo"
 						class="mx-auto mb-4 h-24 w-24 rounded-full object-cover shadow"
 					/>
