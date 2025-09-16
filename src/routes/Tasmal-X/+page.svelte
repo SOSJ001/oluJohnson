@@ -10,7 +10,113 @@
 		SettingsIcon,
 		ShieldIcon
 	} from 'svelte-feather-icons';
+
+	// SEO Meta Tags for Tasmal X page
+	import { page } from '$app/stores';
+
+	// Set page-specific meta tags
+	$: page.title =
+		'Tasmal x Cheque Encoder - Advanced Banking Software | Olu Johnson Business Technical Services';
+	$: page.meta = {
+		description:
+			'Tasmal x Cheque Encoder - Industry-leading cheque encoding software with advanced security, MICR encoding, multi-bank support, and global compliance. Trusted by banks worldwide.',
+		keywords:
+			'Tasmal x, cheque encoder, MICR encoding, banking software, cheque processing, financial software, bank automation, cheque security, banking compliance, West Africa, Nigeria, Lagos',
+		canonical: 'https://www.olujohnsonbusinesstechnicalservices.com/Tasmal-X'
+	};
 </script>
+
+<!-- Page-specific SEO Meta Tags -->
+<svelte:head>
+	<!-- Enhanced SEO for Tasmal X -->
+	<meta
+		name="description"
+		content="Tasmal x Cheque Encoder - Industry-leading cheque encoding software with advanced security, MICR encoding, multi-bank support, and global compliance. Trusted by banks worldwide."
+	/>
+	<meta
+		name="keywords"
+		content="Tasmal x, cheque encoder, MICR encoding, banking software, cheque processing, financial software, bank automation, cheque security, banking compliance, West Africa, Nigeria, Lagos"
+	/>
+
+	<!-- Open Graph for Tasmal X -->
+	<meta property="og:title" content="Tasmal x Cheque Encoder - Advanced Banking Software" />
+	<meta
+		property="og:description"
+		content="Industry-leading cheque encoding software with advanced security, MICR encoding, multi-bank support, and global compliance. Trusted by banks worldwide."
+	/>
+	<meta property="og:type" content="product" />
+	<meta
+		property="og:image"
+		content="https://www.olujohnsonbusinesstechnicalservices.com/Tasmal-X_overview.png"
+	/>
+	<meta property="og:url" content="https://www.olujohnsonbusinesstechnicalservices.com/Tasmal-X" />
+
+	<!-- Twitter Card for Tasmal X -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Tasmal x Cheque Encoder - Advanced Banking Software" />
+	<meta
+		name="twitter:description"
+		content="Industry-leading cheque encoding software with advanced security, MICR encoding, multi-bank support, and global compliance."
+	/>
+	<meta
+		name="twitter:image"
+		content="https://www.olujohnsonbusinesstechnicalservices.com/Tasmal-X_overview.png"
+	/>
+
+	<!-- Product-specific meta tags -->
+	<meta name="product:name" content="Tasmal x Cheque Encoder" />
+	<meta name="product:category" content="Banking Software" />
+	<meta name="product:brand" content="Olu Johnson Business Technical Services" />
+
+	<!-- JSON-LD Structured Data for Tasmal X Product -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "Tasmal x Cheque Encoder",
+			"description": "Industry-leading cheque encoding software with advanced security, MICR encoding, multi-bank support, and global compliance. Trusted by banks and financial institutions worldwide.",
+			"url": "https://www.olujohnsonbusinesstechnicalservices.com/Tasmal-X",
+			"image": "https://www.olujohnsonbusinesstechnicalservices.com/Tasmal-X_overview.png",
+			"applicationCategory": "BusinessApplication",
+			"operatingSystem": "Windows",
+			"softwareVersion": "2.0",
+			"datePublished": "2023-01-01",
+			"dateModified": "2024-01-15",
+			"author": {
+				"@type": "Organization",
+				"name": "Olu Johnson Business Technical Services",
+				"url": "https://www.olujohnsonbusinesstechnicalservices.com"
+			},
+			"offers": {
+				"@type": "Offer",
+				"priceCurrency": "USD",
+				"availability": "https://schema.org/InStock",
+				"price": "Contact for pricing",
+				"priceValidUntil": "2025-12-31"
+			},
+			"featureList": [
+				"Automated MICR Line Encoding",
+				"Multi-bank & Multi-user Support",
+				"Integrated Security Protocols",
+				"Compliance with Global Banking Standards",
+				"Real-time Processing",
+				"Audit Trail & Reporting",
+				"User Role Management",
+				"Data Encryption"
+			],
+			"systemRequirements": {
+				"@type": "TechArticle",
+				"about": "System Requirements",
+				"text": "Windows 10+, .NET Framework 4.8+, SQL Server Express, 4GB RAM minimum, 2GB free disk space"
+			},
+			"audience": {
+				"@type": "Audience",
+				"audienceType": "Banks, Financial Institutions, Credit Unions"
+			},
+			"keywords": "cheque encoder, MICR encoding, banking software, financial software, bank automation, cheque processing, banking compliance"
+		}
+	</script>
+</svelte:head>
 
 <BreadCrumb />
 

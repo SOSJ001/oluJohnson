@@ -2,8 +2,152 @@
 	// @ts-ignore
 	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { CreditCardIcon, HeadphonesIcon, LinkIcon, PhoneIncomingIcon, PrinterIcon, ShieldIcon, ThumbsUpIcon, TruckIcon } from 'svelte-feather-icons';
+	import {
+		CreditCardIcon,
+		HeadphonesIcon,
+		LinkIcon,
+		PhoneIncomingIcon,
+		PrinterIcon,
+		ShieldIcon,
+		ThumbsUpIcon,
+		TruckIcon
+	} from 'svelte-feather-icons';
+
+	// SEO Meta Tags for Services page
+	import { page } from '$app/stores';
+
+	// Set page-specific meta tags
+	$: page.title = 'IT Services & Hardware Repair - Olu Johnson Business Technical Services';
+	$: page.meta = {
+		description:
+			'Professional IT services including printer repair, computer maintenance, cheque encoder service, and custom software development. Serving banks, offices, and institutions across West Africa.',
+		keywords:
+			'IT services, hardware repair, printer repair, computer repair, cheque encoder service, custom software development, West Africa, Nigeria, Lagos, banking IT support, office equipment repair',
+		canonical: 'https://www.olujohnsonbusinesstechnicalservices.com/Services'
+	};
 </script>
+
+<!-- Page-specific SEO Meta Tags -->
+<svelte:head>
+	<!-- Enhanced SEO for Services page -->
+	<meta
+		name="description"
+		content="Professional IT services including printer repair, computer maintenance, cheque encoder service, and custom software development. Serving banks, offices, and institutions across West Africa."
+	/>
+	<meta
+		name="keywords"
+		content="IT services, hardware repair, printer repair, computer repair, cheque encoder service, custom software development, West Africa, Nigeria, Lagos, banking IT support, office equipment repair, on-site support, network setup"
+	/>
+
+	<!-- Open Graph for Services -->
+	<meta
+		property="og:title"
+		content="IT Services & Hardware Repair - Professional Technical Support"
+	/>
+	<meta
+		property="og:description"
+		content="Comprehensive hardware repair and custom software solutions for banks, offices, and institutions. Expert IT services across West Africa."
+	/>
+	<meta property="og:type" content="website" />
+	<meta
+		property="og:image"
+		content="https://www.olujohnsonbusinesstechnicalservices.com/4111232.png"
+	/>
+	<meta property="og:url" content="https://www.olujohnsonbusinesstechnicalservices.com/Services" />
+
+	<!-- Twitter Card for Services -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta
+		name="twitter:title"
+		content="IT Services & Hardware Repair - Professional Technical Support"
+	/>
+	<meta
+		name="twitter:description"
+		content="Comprehensive hardware repair and custom software solutions for banks, offices, and institutions. Expert IT services across West Africa."
+	/>
+	<meta
+		name="twitter:image"
+		content="https://www.olujohnsonbusinesstechnicalservices.com/4111232.png"
+	/>
+
+	<!-- Service-specific meta tags -->
+	<meta name="service:category" content="IT Services" />
+	<meta name="service:area" content="West Africa" />
+	<meta name="service:type" content="Hardware Repair, Software Development" />
+
+	<!-- JSON-LD Structured Data for Services -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "IT Services & Hardware Repair",
+			"description": "Professional IT services including printer repair, computer maintenance, cheque encoder service, and custom software development. Serving banks, offices, and institutions across West Africa.",
+			"url": "https://www.olujohnsonbusinesstechnicalservices.com/Services",
+			"image": "https://www.olujohnsonbusinesstechnicalservices.com/4111232.png",
+			"provider": {
+				"@type": "Organization",
+				"name": "Olu Johnson Business Technical Services",
+				"url": "https://www.olujohnsonbusinesstechnicalservices.com"
+			},
+			"serviceType": "IT Services",
+			"areaServed": {
+				"@type": "Country",
+				"name": "Nigeria"
+			},
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "IT Services Catalog",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Printer Repair",
+							"description": "Certified repairs for HP, Canon, Epson, and more printer brands"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Cheque Encoder Service",
+							"description": "Maintenance and support for cheque encoding devices"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "On-Site Support",
+							"description": "Fast response for urgent hardware issues"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Custom Software Development",
+							"description": "Tailored software solutions including Tasmal x Cheque Encoder"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Integration Services",
+							"description": "Seamless software integration for your workflow"
+						}
+					}
+				]
+			},
+			"audience": {
+				"@type": "Audience",
+				"audienceType": "Banks, Offices, Financial Institutions, Government Agencies"
+			},
+			"keywords": "IT services, hardware repair, printer repair, computer repair, cheque encoder service, custom software development, West Africa, Nigeria, Lagos, banking IT support, office equipment repair"
+		}
+	</script>
+</svelte:head>
 
 <!-- Breadcrumb -->
 <BreadCrumb />
@@ -12,7 +156,7 @@
 <main class="container mx-auto px-4">
 	<!--Services Hero -->
 	<section
-		class="bg-[url('/purple-Bg.jpg')] bg-cover rounded-lg bg-gradient-to-r from-purple-500 via-purple-400 to-purple-300 py-10"
+		class="rounded-lg bg-gradient-to-r bg-[url('/purple-Bg.jpg')] from-purple-500 via-purple-400 to-purple-300 bg-cover py-10"
 	>
 		<div class="container mx-auto flex flex-col items-center justify-between px-4 md:flex-row">
 			<!-- Text Content -->
@@ -40,7 +184,7 @@
 	</section>
 
 	<!-- Hardware Repair Section -->
-	<section class="my-10 by-gray-100">
+	<section class="by-gray-100 my-10">
 		<h2 class="mb-6 text-2xl font-bold text-blue-600">Hardware Repair</h2>
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 			<!-- Printer Repair -->
@@ -118,9 +262,9 @@
 			<div
 				class="transform rounded-lg bg-purple-50 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-			<div class="flex items-center justify-start mb-4 text-gray-100">
-				<span class="rounded-full bg-purple-600 p-1"><ShieldIcon /></span>
-			  </div>
+				<div class="mb-4 flex items-center justify-start text-gray-100">
+					<span class="rounded-full bg-purple-600 p-1"><ShieldIcon /></span>
+				</div>
 				<h3 class="mb-2 text-xl font-bold">Tasmal x Encoder</h3>
 				<p class="mb-4">Secure cheque encoding for banks and institutions.</p>
 				<a
@@ -132,11 +276,11 @@
 
 			<!-- Integration Services -->
 			<div
-				class="bg-purple-100 transform rounded-lg p-6 shadow-md transition duration-300 hover:scale-105"
+				class="transform rounded-lg bg-purple-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-			<div class="flex items-center justify-start mb-4 text-gray-100">
-				<span class="rounded-full bg-purple-600 p-1"><LinkIcon /></span>
-			  </div>
+				<div class="mb-4 flex items-center justify-start text-gray-100">
+					<span class="rounded-full bg-purple-600 p-1"><LinkIcon /></span>
+				</div>
 				<h3 class="mb-2 text-xl font-bold">Integration Services</h3>
 				<p class="mb-4">Seamless software integration for your workflow.</p>
 				<a
@@ -156,9 +300,9 @@
 			<div
 				class="transform rounded-lg bg-gray-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-			<div class="mb-4 flex text-gray-100">
-				<span class="rounded-full bg-purple-600 p-1"><PhoneIncomingIcon /></span>
-			</div>
+				<div class="mb-4 flex text-gray-100">
+					<span class="rounded-full bg-purple-600 p-1"><PhoneIncomingIcon /></span>
+				</div>
 				<h3 class="mb-2 text-xl font-bold">1. Consultation</h3>
 				<p class="mb-4">Discuss your needs with our experts.</p>
 			</div>
@@ -167,9 +311,9 @@
 			<div
 				class="transform rounded-lg bg-purple-100 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-			<div class="mb-4 flex text-gray-100">
-				<span class="rounded-full bg-purple-600 p-1"><TruckIcon /></span>
-			</div>
+				<div class="mb-4 flex text-gray-100">
+					<span class="rounded-full bg-purple-600 p-1"><TruckIcon /></span>
+				</div>
 				<h3 class="mb-2 text-xl font-bold">2. Service Delivery</h3>
 				<p class="mb-4">Certified technicians handle your request.</p>
 			</div>
@@ -178,9 +322,9 @@
 			<div
 				class="transform rounded-lg bg-purple-50 p-6 shadow-md transition duration-300 hover:scale-105"
 			>
-			<div class="mb-4 flex text-gray-100">
-				<span class="rounded-full bg-purple-600 p-1"><ThumbsUpIcon /></span>
-			</div>
+				<div class="mb-4 flex text-gray-100">
+					<span class="rounded-full bg-purple-600 p-1"><ThumbsUpIcon /></span>
+				</div>
 				<h3 class="mb-2 text-xl font-bold">3. Quality Assurance</h3>
 				<p class="mb-4">Every service is tested and guaranteed.</p>
 			</div>

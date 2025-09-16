@@ -2,6 +2,19 @@
 	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
+	// SEO Meta Tags for this page
+	import { page } from '$app/stores';
+
+	// Set page-specific meta tags
+	$: page.title = 'Brands We Service - Olu Johnson Business Technical Services';
+	$: page.meta = {
+		description:
+			'We service major hardware brands including HP, Canon, Dell, Lenovo, and more. Expert repair and support for offices, banks, and institutions across West Africa.',
+		keywords:
+			'brands, HP, Canon, Dell, Lenovo, Epson, Panasonic, printer repair, scanner repair, computer repair, West Africa, Lagos, Nigeria',
+		canonical: 'https://www.olujohnsonbusinesstechnicalservices.com/Brands'
+	};
+
 	const brands = [
 		{
 			name: 'HP',
