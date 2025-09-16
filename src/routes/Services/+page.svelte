@@ -90,10 +90,80 @@
 				"url": "https://www.olujohnsonbusinesstechnicalservices.com"
 			},
 			"serviceType": "IT Services",
-			"areaServed": {
-				"@type": "Country",
-				"name": "Nigeria"
-			},
+			"areaServed": [
+				{
+					"@type": "Country",
+					"name": "Nigeria"
+				},
+				{
+					"@type": "Country",
+					"name": "Ghana"
+				},
+				{
+					"@type": "Country",
+					"name": "Sierra Leone"
+				},
+				{
+					"@type": "Country",
+					"name": "Liberia"
+				},
+				{
+					"@type": "Country",
+					"name": "Gambia"
+				},
+				{
+					"@type": "Country",
+					"name": "Senegal"
+				},
+				{
+					"@type": "Country",
+					"name": "Mali"
+				},
+				{
+					"@type": "Country",
+					"name": "Burkina Faso"
+				},
+				{
+					"@type": "Country",
+					"name": "Niger"
+				},
+				{
+					"@type": "Country",
+					"name": "Chad"
+				},
+				{
+					"@type": "Country",
+					"name": "Cameroon"
+				},
+				{
+					"@type": "Country",
+					"name": "Benin"
+				},
+				{
+					"@type": "Country",
+					"name": "Togo"
+				},
+				{
+					"@type": "Country",
+					"name": "Ivory Coast"
+				},
+				{
+					"@type": "Country",
+					"name": "Guinea"
+				},
+				{
+					"@type": "Country",
+					"name": "Guinea-Bissau"
+				},
+				{
+					"@type": "Country",
+					"name": "Cape Verde"
+				},
+				{
+					"@type": "Country",
+					"name": "Mauritania"
+				}
+			],
 			"hasOfferCatalog": {
 				"@type": "OfferCatalog",
 				"name": "IT Services Catalog",
