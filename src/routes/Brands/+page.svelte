@@ -1,6 +1,81 @@
 <script>
 	import BreadCrumb from '$lib/components/BreadCrumb.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	const brands = [
+		{
+			name: 'HP',
+			services: 'Printers, Scanners, Cheque Encoders',
+			icon: 'fas fa-print',
+			logo: 'https://cdn.brandfetch.io/idntgPecbn/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1750316474215'
+		},
+		{
+			name: 'Canon',
+			services: 'Printers, Scanners',
+			icon: 'fas fa-camera',
+			logo: 'https://cdn.brandfetch.io/idsU6MactO/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1675855846514'
+		},
+		{
+			name: 'Epson',
+			services: 'Cheque Encoders, Printers',
+			icon: 'fas fa-check-square',
+			logo: 'https://cdn.brandfetch.io/idGfYS68w5/w/420/h/100/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1750361229276'
+		},
+		{
+			name: 'Dell',
+			services: 'Workstations, Laptops',
+			icon: 'fas fa-desktop',
+			logo: 'https://cdn.brandfetch.io/idc1hWCJYN/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1721282612101'
+		},
+		{
+			name: 'Lenovo',
+			services: 'Laptops, Desktops',
+			icon: 'fas fa-laptop',
+			logo: 'https://cdn.brandfetch.io/iddtMrgJvA/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667571542988'
+		},
+		{
+			name: 'Panasonic',
+			services: 'Scanners, Printers',
+			icon: 'fas fa-cogs',
+			logo: 'https://cdn.brandfetch.io/idZc2Ve3u9/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667564190785'
+		},
+		{
+			name: 'Okidata',
+			services: 'Printers, Scanners',
+			icon: 'fas fa-print',
+			logo: 'https://cdn.brandfetch.io/id5HmsiXjY/w/576/h/168/theme/light/logo.png?c=1bxid64Mup7aczewSAYMX&t=1691149220831'
+		},
+		{
+			name: 'Konica Minolta',
+			services: 'Printers, Scanners, Copiers',
+			icon: 'fas fa-print',
+			logo: 'https://cdn.brandfetch.io/id9rHYuWzR/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1691135442970'
+		},
+		{
+			name: 'Xerox',
+			services: 'Copiers, Printers, Document Management',
+			icon: 'fas fa-copy',
+			logo: 'https://cdn.brandfetch.io/id-RGKzn_O/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1679467841459'
+		},
+		{
+			name: 'Sharp',
+			services: 'Copiers, Printers, Scanners',
+			icon: 'fas fa-copy',
+			logo: 'https://cdn.brandfetch.io/idOszzkauu/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1668517580639'
+		},
+		{
+			name: 'Zebra',
+			services: 'Label Printers, Barcode Printers, Mobile Printers',
+			icon: 'fas fa-barcode',
+			logo: '/logo-zebra-chat.png'
+		},
+		{
+			name: 'Dymo',
+			services: 'Label Printers, Tape Printers',
+			icon: 'fas fa-tag',
+			logo: '/Dymo-logo.svg'
+		}
+	];
 </script>
 
 <BreadCrumb />
@@ -28,104 +103,21 @@
 	<section class="mb-10">
 		<h2 class="mb-6 text-2xl font-bold">Major Brands</h2>
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-			<!-- HP -->
-			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
-			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-print text-4xl"><img src="/HP-Logo.png" class="h-[36px]" alt="" /></i>
+			{#each brands as brand}
+				<div
+					class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
+				>
+					<div class="mb-4 flex items-center justify-center text-purple-500">
+						{#if brand.logo}
+							<img src={brand.logo} class="h-[36px]" alt="{brand.name} Logo" />
+						{:else}
+							<i class="{brand.icon} text-4xl"></i>
+						{/if}
+					</div>
+					<h3 class="mb-2 text-xl font-bold">{brand.name}</h3>
+					<p class="mb-4">{brand.services}</p>
 				</div>
-				<h3 class="mb-2 text-xl font-bold">HP</h3>
-				<p class="mb-4">Printers, Scanners, Cheque Encoders</p>
-			</div>
-
-			<!-- Canon -->
-			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
-			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-camera text-4xl"></i>
-				</div>
-				<h3 class="mb-2 text-xl font-bold">Canon</h3>
-				<p class="mb-4">Printers, Scanners</p>
-			</div>
-
-			<!-- Epson -->
-			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
-			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-check-square text-4xl"></i>
-				</div>
-				<h3 class="mb-2 text-xl font-bold">Epson</h3>
-				<p class="mb-4">Cheque Encoders, Printers</p>
-			</div>
-
-			<!-- Dell -->
-			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
-			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-desktop text-4xl"></i>
-				</div>
-				<h3 class="mb-2 text-xl font-bold">Dell</h3>
-				<p class="mb-4">Workstations, Laptops</p>
-			</div>
-
-			<!-- Lenovo -->
-			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
-			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-laptop text-4xl"></i>
-				</div>
-				<h3 class="mb-2 text-xl font-bold">Lenovo</h3>
-				<p class="mb-4">Laptops, Desktops</p>
-			</div>
-
-			<!-- Fujitsu -->
-			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
-			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-file-contract text-4xl"></i>
-				</div>
-				<h3 class="mb-2 text-xl font-bold">Fujitsu</h3>
-				<p class="mb-4">Scanners, Cheque Encoders</p>
-			</div>
-
-			<!-- Panasonic -->
-			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
-			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-cogs text-4xl"></i>
-				</div>
-				<h3 class="mb-2 text-xl font-bold">Panasonic</h3>
-				<p class="mb-4">Scanners, Printers</p>
-			</div>
-
-			<!-- Magner -->
-			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
-			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-balance-scale text-4xl"></i>
-				</div>
-				<h3 class="mb-2 text-xl font-bold">Magner</h3>
-				<p class="mb-4">Cheque Encoders</p>
-			</div>
-
-			<!-- Glory -->
-			<div
-				class="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105"
-			>
-				<div class="mb-4 flex items-center justify-center text-purple-500">
-					<i class="fas fa-money-bill-wave text-4xl"></i>
-				</div>
-				<h3 class="mb-2 text-xl font-bold">Glory</h3>
-				<p class="mb-4">Banking Equipment</p>
-			</div>
+			{/each}
 		</div>
 	</section>
 
