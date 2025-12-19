@@ -26,7 +26,7 @@
 	let formError = '';
 	let showForm = true;
 	let successMessageRef: HTMLDivElement;
-	let hardwareSectionRef: HTMLDivElement;
+	let renewalProcessRef: HTMLDivElement;
 
 	// Google Sheets via Apps Script configuration
 	// Get from environment variable (set in .env file)
@@ -36,14 +36,10 @@
 	$: if (formSubmitted) {
 		setTimeout(() => {
 			showForm = false;
-			// Scroll to success message after form collapses (with offset to scroll higher)
+			// Scroll to Renewal Process section after form collapses
 			setTimeout(() => {
-				if (successMessageRef) {
-					successMessageRef.scrollIntoView({ behavior: 'smooth', block: 'start' });
-					// Scroll up a bit more for better visibility
-					setTimeout(() => {
-						window.scrollBy({ top: -100, behavior: 'smooth' });
-					}, 100);
+				if (renewalProcessRef) {
+					renewalProcessRef.scrollIntoView({ behavior: 'smooth', block: 'start' });
 				}
 			}, 100);
 		}, 300); // Small delay to show submission animation
@@ -474,7 +470,7 @@ Additional Notes: ${data.additionalNotes}`;
 		</div>
 
 		<!-- Process Steps -->
-		<div class="mb-8">
+		<div bind:this={renewalProcessRef} class="mb-8">
 			<h3 class="mb-4 text-lg font-semibold sm:text-xl">Renewal Process</h3>
 			<div class="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
 				<!-- Step 1 -->
@@ -693,10 +689,7 @@ Additional Notes: ${data.additionalNotes}`;
 					</div>
 
 					<!-- Hardware & System Identifiers Section -->
-					<div
-						bind:this={hardwareSectionRef}
-						class="rounded-lg border-2 border-purple-200 bg-purple-50 p-4 sm:p-6"
-					>
+					<div class="rounded-lg border-2 border-purple-200 bg-purple-50 p-4 sm:p-6">
 						<h4 class="mb-3 text-base font-semibold text-purple-900 sm:mb-4 sm:text-lg">
 							Hardware & System Identifiers
 						</h4>
