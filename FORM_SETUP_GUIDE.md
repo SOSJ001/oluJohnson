@@ -390,14 +390,34 @@ Additional Notes: ${data.additionalNotes}
 		`;
 
 		// Option 1: Using MailApp (works with any email provider)
-		// Send email with better deliverability settings
+		// Send notification email to service engineer
 		MailApp.sendEmail({
 			to: 'service.engineer@olujohnsonbusinesstechnicalservices.com',
 			subject: 'New Tasmal X License Renewal Request',
 			body: emailBody,
-			replyTo: data.email, // Use the form submitter's email as reply-to
-			name: 'Tasmal X License System' // Sender name (if supported)
+			replyTo: data.email // Use the form submitter's email as reply-to
 		});
+
+		// Send confirmation copy to form submitter (more reliable than BCC)
+		if (data.email) {
+			const confirmationBody = `
+Thank you for submitting your Tasmal X License Renewal Request.
+
+Your request has been received and is being processed. Below is a copy of your submission:
+
+${emailBody}
+
+We will contact you shortly regarding your license renewal.
+
+Best regards,
+Olu Johnson Business Technical Services
+			`;
+			MailApp.sendEmail({
+				to: data.email,
+				subject: 'Confirmation: Tasmal X License Renewal Request Received',
+				body: confirmationBody
+			});
+		}
 
 		// Option 2: Using GmailApp (Gmail accounts only - sometimes works better)
 		// Uncomment this and comment out MailApp above if MailApp doesn't work
@@ -430,107 +450,240 @@ Additional Notes: ${data.additionalNotes}
 
 - **Not receiving emails? Follow these steps:**
 
-  1. **Check the Apps Script Execution Log:**
+  1.  **Check the Apps Script Execution Log:**
 
-     - In Apps Script, go to **View** → **Execution log**
-     - Look for any errors when the form was submitted
-     - If you see errors, they'll tell you what went wrong
+      - In Apps Script, go to **View** → **Execution log**
+      - Look for any errors when the form was submitted
+      - If you see errors, they'll tell you what went wrong
 
-  2. **Verify Email Code Was Added:**
+  2.  **Verify Email Code Was Added:**
 
-     - Make sure the email code is placed **after** `sheet.appendRow([...])` but **before** the `return` statement
-     - Check that there are no syntax errors (missing quotes, brackets, etc.)
+      - Make sure the email code is placed **after** `sheet.appendRow([...])` but **before** the `return` statement
+      - Check that there are no syntax errors (missing quotes, brackets, etc.)
 
-  3. **Check Gmail Permissions:**
+  3.  **Check Gmail Permissions:**
 
-     - After adding email code, you **must redeploy** the script
-     - **If the authorization prompt doesn't appear**, you need to manually authorize:
-       1. In Apps Script, click the **lock icon** 🔒 (or **View** → **Show manifest file**)
-       2. Click **Review permissions**
-       3. Choose your Google account
-       4. Click **Advanced** → **Go to [Project Name] (unsafe)**
-       5. Click **Allow** to grant Gmail permissions
-     - Alternatively, you can revoke and re-authorize:
-       1. Go to [Google Account Permissions](https://myaccount.google.com/permissions)
-       2. Find your Apps Script project
-       3. Click **Remove access**
-       4. Redeploy your script - it will ask for permissions again
-     - Make sure you clicked **Allow** for Gmail access
-     - If you didn't authorize, the email won't send
+      - After adding email code, you **must redeploy** the script
+      - **If the authorization prompt doesn't appear**, you need to manually authorize:
+        1. In Apps Script, click the **lock icon** 🔒 (or **View** → **Show manifest file**)
+        2. Click **Review permissions**
+        3. Choose your Google account
+        4. Click **Advanced** → **Go to [Project Name] (unsafe)**
+        5. Click **Allow** to grant Gmail permissions
+      - Alternatively, you can revoke and re-authorize:
+        1. Go to [Google Account Permissions](https://myaccount.google.com/permissions)
+        2. Find your Apps Script project
+        3. Click **Remove access**
+        4. Redeploy your script - it will ask for permissions again
+      - Make sure you clicked **Allow** for Gmail access
+      - If you didn't authorize, the email won't send
 
-  4. **Redeploy After Adding Email Code:**
+  4.  **Redeploy After Adding Email Code:**
 
-     - **Deploy** → **Manage deployments**
-     - Click the pencil icon ✏️ to edit
-     - Click **Deploy** (creates new version)
-     - **Authorize** when prompted
+      - **Deploy** → **Manage deployments**
+      - Click the pencil icon ✏️ to edit
+      - Click **Deploy** (creates new version)
+      - **Authorize** when prompted
 
-  5. **Check Your Spam/Junk Folder:**
+  5.  **Check Your Spam/Junk Folder:**
 
-     - Emails from Apps Script sometimes go to spam
-     - Check your spam folder
+      - Emails from Apps Script sometimes go to spam
+      - Check your spam folder
 
-  6. **Verify Email Address:**
+  6.  **Verify Email Address:**
 
-     - Make sure the email address in the code is correct
-     - No typos or extra spaces
+      - Make sure the email address in the code is correct
+      - No typos or extra spaces
 
-  7. **Test the Email Function:**
+  7.  **Test the Email Function:**
 
-     - In Apps Script, create a simple test function:
+      - In Apps Script, create a simple test function:
 
-     ```javascript
-     function testEmailAuth() {
-     	MailApp.sendEmail({
-     		to: 'your-email@example.com',
-     		subject: 'Test Email',
-     		body: 'This is a test'
-     	});
-     }
-     ```
+      ```javascript
+      function testEmailAuth() {
+      	MailApp.sendEmail({
+      		to: 'your-email@example.com',
+      		subject: 'Test Email',
+      		body: 'This is a test'
+      	});
+      }
+      ```
 
-     - **Important Steps:**
-       1. Click **Run** → Select `testEmailAuth` from the dropdown
-       2. **If you see "Authorization required"** → Click **Review permissions**
-       3. Choose your Google account
-       4. Click **Advanced** → **Go to [Project Name] (unsafe)**
-       5. Click **Allow** to grant Gmail permissions
-       6. Run the function again - it should work now
-     - **If you get an error**, check the execution log:
-       - Go to **View** → **Execution log**
-       - Look for the error message
-       - Common errors:
-         - "Exception: Access denied" → Permissions not granted
-         - "Exception: Invalid email" → Check email address format
-         - "Exception: Service invoked too many times" → Quota limit reached
-     - If this works, the issue is with the form submission
-     - If this doesn't work, Gmail permissions are not authorized
+      - **Important Steps:**
+        1. Click **Run** → Select `testEmailAuth` from the dropdown
+        2. **If you see "Authorization required"** → Click **Review permissions**
+        3. Choose your Google account
+        4. Click **Advanced** → **Go to [Project Name] (unsafe)**
+        5. Click **Allow** to grant Gmail permissions
+        6. Run the function again - it should work now
+      - **If you get an error**, check the execution log:
+        - Go to **View** → **Execution log**
+        - Look for the error message
+        - Common errors:
+          - "Exception: Access denied" → Permissions not granted
+          - "Exception: Invalid email" → Check email address format
+          - "Exception: Service invoked too many times" → Quota limit reached
+      - If this works, the issue is with the form submission
+      - If this doesn't work, Gmail permissions are not authorized
 
-  8. **Check for Errors in the Code:**
+  8.  **Check for Errors in the Code:**
 
-     - Make sure the email code is inside the `try` block
-     - If there's an error, it should be caught and logged
-     - Check the execution log for specific error messages
+      - Make sure the email code is inside the `try` block
+      - If there's an error, it should be caught and logged
+      - Check the execution log for specific error messages
 
-  9. **Common Issues:**
+  9.  **Common Issues:**
 
-     - **Email code not executed:** Make sure it's after `sheet.appendRow` but before `return`
-     - **Permissions not granted:**
-       - Run the test function from the Apps Script editor (not just deploy)
-       - When you run it, it will prompt for authorization
-       - You MUST click "Review permissions" → "Allow" when prompted
-       - If no prompt appears, revoke access and try again
-     - **Script not redeployed:** Changes won't work until you redeploy
-     - **Email in spam:** Check spam folder
-     - **Syntax error:** Check for missing quotes, brackets, or commas
-     - **"Access denied" error:** Gmail permissions not authorized - run test function to trigger authorization
-     - **Quota exceeded:** Google has daily email limits - wait 24 hours or check quota usage
+      - **Email code not executed:** Make sure it's after `sheet.appendRow` but before `return`
+      - **Permissions not granted:**
+        - Run the test function from the Apps Script editor (not just deploy)
+        - When you run it, it will prompt for authorization
+        - You MUST click "Review permissions" → "Allow" when prompted
+        - If no prompt appears, revoke access and try again
+      - **Script not redeployed:** Changes won't work until you redeploy
+      - **Email in spam:** Check spam folder
+      - **Syntax error:** Check for missing quotes, brackets, or commas
+      - **"Access denied" error:** Gmail permissions not authorized - run test function to trigger authorization
+      - **Quota exceeded:** Google has daily email limits - wait 24 hours or check quota usage
 
-  10. **Test Function Works But doPost Email Doesn't? (Common Issue):**
+  10. **BCC Not Working? (Form Submitter Not Receiving Copy):**
 
-      If `testEmailAuth()` works but emails from `doPost` don't send:
+            If the form submitter isn't receiving a copy via BCC, try these solutions:
 
-      **A. Check if Email Code is in Deployed Version:**
+            **A. Check if data.email is valid:**
+            - Add logging: `console.log('BCC email:', data.email);`
+            - Make sure the email field is being captured correctly
+            - Check the execution log to see if data.email has a value
+
+            **B. Try sending a separate confirmation email:**
+            - Instead of relying on BCC, send a separate email to the submitter
+            - This is more reliable and gives you better control
+            - See the code example below
+
+            **C. Use GmailApp instead:**
+            - GmailApp sometimes handles BCC better than MailApp
+            - Try switching to GmailApp if MailApp BCC isn't working
+
+            **D. Send Separate Confirmation Email (Most Reliable):**
+            ```javascript
+            // Send notification to service engineer
+            MailApp.sendEmail({
+              to: 'service.engineer@olujohnsonbusinesstechnicalservices.com',
+              subject: 'New Tasmal X License Renewal Request',
+              body: emailBody,
+              replyTo: data.email
+            });
+
+            // Send confirmation copy to form submitter
+            if (data.email) {
+              const confirmationBody = `
+
+      Thank you for submitting your Tasmal X License Renewal Request.
+
+Your request has been received and is being processed. Below is a copy of your submission:
+
+${emailBody}
+
+We will contact you shortly regarding your license renewal.
+
+Best regards,
+Olu Johnson Business Technical Services
+`;
+MailApp.sendEmail({
+to: data.email,
+subject: 'Confirmation: Tasmal X License Renewal Request Received',
+body: confirmationBody
+});
+}
+
+````
+
+11. **Test Function Works But doPost Email Doesn't? (Common Issue):**
+
+    If `testEmailAuth()` works but emails from `doPost` don't send:
+
+    **A. Check if Email Code is in Deployed Version:**
+
+    - Make sure you saved the script after adding email code
+    - **You MUST redeploy** after adding email code:
+      1. **Deploy** → **Manage deployments**
+      2. Click the pencil icon ✏️
+      3. Click **Deploy** (creates new version)
+    - The deployed version might be using old code without email
+
+    **B. Check Execution Log for doPost:**
+
+    - Submit a form on your website
+    - Go to **View** → **Execution log**
+    - Look for the `doPost` execution
+    - Check for error messages
+    - If you see "Attempting to send email notification..." but no "Email sent successfully", the email failed
+
+    **C. Verify Email Code Placement:**
+
+    - Email code should be AFTER `sheet.appendRow([...])`
+    - Email code should be BEFORE the `return` statement
+    - Email code should be INSIDE the `try` block
+
+    **D. Check for Variable Issues:**
+
+    - Make sure `data.email` and other variables exist
+    - Add `|| 'Not provided'` fallbacks to prevent undefined errors
+    - Check the execution log for any variable-related errors
+
+    **E. Add Better Logging:**
+
+    - Add `console.log('Attempting to send email notification...');` before email
+    - Add `console.log('Email sent successfully');` after email
+    - This helps identify where it's failing
+
+12. **Code Runs But Email Not Sending? (You see "Attempting to send email..." in log):**
+
+    This means the code is executing but `MailApp.sendEmail()` is failing. Try these:
+
+    **A. Check for Error Messages:**
+
+    - Add this after `MailApp.sendEmail()`:
+
+    ```javascript
+    console.log('Email sent successfully');
+    ```
+
+    - If you DON'T see this message in the log, the email failed
+    - Check the execution log for any error messages after "Attempting to send email..."
+
+    **B. Verify Gmail Permissions Are Actually Granted:**
+
+    - Go to [Google Account Permissions](https://myaccount.google.com/permissions)
+    - Find your Apps Script project
+    - Check if Gmail permissions are listed
+    - If not, revoke and re-authorize:
+      1. Remove access
+      2. Run `testEmailAuth` function again
+      3. Click "Review permissions" → "Allow"
+
+    **C. Check Email Quota:**
+
+    - Google Apps Script has daily email limits
+    - Free accounts: 100 emails/day
+    - If you've exceeded the limit, wait 24 hours
+    - Check quota: The error would say "Service invoked too many times"
+
+    **D. Verify Email Address:**
+
+    - Make sure the email address is correct
+    - No typos or extra spaces
+    - Try sending to a different email to test
+
+    **E. Add Better Error Handling:**
+
+    - Wrap the email code in try-catch (already in the code example)
+    - Check the execution log for the actual error message
+    - The error will tell you exactly what's wrong
+
+13. **Email Code Not Executing? Check These:**
+
+    - **Is the email code in the deployed version?**
 
       - Make sure you saved the script after adding email code
       - **You MUST redeploy** after adding email code:
@@ -539,142 +692,61 @@ Additional Notes: ${data.additionalNotes}
         3. Click **Deploy** (creates new version)
       - The deployed version might be using old code without email
 
-      **B. Check Execution Log for doPost:**
+    - **Add logging to verify email code runs:**
 
-      - Submit a form on your website
-      - Go to **View** → **Execution log**
-      - Look for the `doPost` execution
-      - Check for error messages
-      - If you see "Attempting to send email notification..." but no "Email sent successfully", the email failed
-
-      **C. Verify Email Code Placement:**
-
-      - Email code should be AFTER `sheet.appendRow([...])`
-      - Email code should be BEFORE the `return` statement
-      - Email code should be INSIDE the `try` block
-
-      **D. Check for Variable Issues:**
-
-      - Make sure `data.email` and other variables exist
-      - Add `|| 'Not provided'` fallbacks to prevent undefined errors
-      - Check the execution log for any variable-related errors
-
-      **E. Add Better Logging:**
-
-      - Add `console.log('Attempting to send email notification...');` before email
-      - Add `console.log('Email sent successfully');` after email
-      - This helps identify where it's failing
-
-  11. **Code Runs But Email Not Sending? (You see "Attempting to send email..." in log):**
-
-      This means the code is executing but `MailApp.sendEmail()` is failing. Try these:
-
-      **A. Check for Error Messages:**
-
-      - Add this after `MailApp.sendEmail()`:
+      - Add this before the email code to verify it's reached:
 
       ```javascript
-      console.log('Email sent successfully');
+      // Add this line before MailApp.sendEmail
+      console.log('Attempting to send email...');
       ```
 
-      - If you DON'T see this message in the log, the email failed
-      - Check the execution log for any error messages after "Attempting to send email..."
+      - Check the execution log - if you see "Attempting to send email...", the code is running
+      - If you don't see it, the email code isn't being executed
 
-      **B. Verify Gmail Permissions Are Actually Granted:**
+    - **Check if email code is in the right place:**
+      - It should be AFTER `sheet.appendRow([...])`
+      - It should be BEFORE the `return` statement
+      - It should be INSIDE the `try` block
 
-      - Go to [Google Account Permissions](https://myaccount.google.com/permissions)
-      - Find your Apps Script project
-      - Check if Gmail permissions are listed
-      - If not, revoke and re-authorize:
-        1. Remove access
-        2. Run `testEmailAuth` function again
-        3. Click "Review permissions" → "Allow"
+14. **Still Not Working? Try This Complete Reset:**
 
-      **C. Check Email Quota:**
+    **Step 1: Check Execution Log**
 
-      - Google Apps Script has daily email limits
-      - Free accounts: 100 emails/day
-      - If you've exceeded the limit, wait 24 hours
-      - Check quota: The error would say "Service invoked too many times"
+    - In Apps Script: **View** → **Execution log**
+    - Look for `testEmailAuth` execution
+    - What error message do you see?
+    - Common errors:
+      - `Exception: Access denied` = Permissions not granted
+      - `Exception: Invalid email` = Email format issue
+      - `Exception: Service invoked too many times` = Quota limit
 
-      **D. Verify Email Address:**
+    **Step 2: Complete Permission Reset**
 
-      - Make sure the email address is correct
-      - No typos or extra spaces
-      - Try sending to a different email to test
+    1. Go to [Google Account Permissions](https://myaccount.google.com/permissions)
+    2. Find your Apps Script project (search for "Tasmal" or "Apps Script")
+    3. Click **Remove access** (trash icon) for ALL Apps Script entries
+    4. Go back to Apps Script editor
+    5. Click **Run** → Select `testEmailAuth`
+    6. **You should now see "Authorization required"**
+    7. Click **Review permissions**
+    8. Choose your Google account
+    9. Click **Advanced** → **Go to [Project Name] (unsafe)**
+    10. Click **Allow**
+    11. Run `testEmailAuth` again - it should work now
 
-      **E. Add Better Error Handling:**
+    **Step 3: Verify It Works**
 
-      - Wrap the email code in try-catch (already in the code example)
-      - Check the execution log for the actual error message
-      - The error will tell you exactly what's wrong
+    - After authorizing, run `testEmailAuth` again
+    - Check your email inbox (and spam folder)
+    - If you receive the email, permissions are working!
 
-  12. **Email Code Not Executing? Check These:**
+    **Step 4: If Still Not Working**
 
-      - **Is the email code in the deployed version?**
-
-        - Make sure you saved the script after adding email code
-        - **You MUST redeploy** after adding email code:
-          1. **Deploy** → **Manage deployments**
-          2. Click the pencil icon ✏️
-          3. Click **Deploy** (creates new version)
-        - The deployed version might be using old code without email
-
-      - **Add logging to verify email code runs:**
-
-        - Add this before the email code to verify it's reached:
-
-        ```javascript
-        // Add this line before MailApp.sendEmail
-        console.log('Attempting to send email...');
-        ```
-
-        - Check the execution log - if you see "Attempting to send email...", the code is running
-        - If you don't see it, the email code isn't being executed
-
-      - **Check if email code is in the right place:**
-        - It should be AFTER `sheet.appendRow([...])`
-        - It should be BEFORE the `return` statement
-        - It should be INSIDE the `try` block
-
-  13. **Still Not Working? Try This Complete Reset:**
-
-      **Step 1: Check Execution Log**
-
-      - In Apps Script: **View** → **Execution log**
-      - Look for `testEmailAuth` execution
-      - What error message do you see?
-      - Common errors:
-        - `Exception: Access denied` = Permissions not granted
-        - `Exception: Invalid email` = Email format issue
-        - `Exception: Service invoked too many times` = Quota limit
-
-      **Step 2: Complete Permission Reset**
-
-      1. Go to [Google Account Permissions](https://myaccount.google.com/permissions)
-      2. Find your Apps Script project (search for "Tasmal" or "Apps Script")
-      3. Click **Remove access** (trash icon) for ALL Apps Script entries
-      4. Go back to Apps Script editor
-      5. Click **Run** → Select `testEmailAuth`
-      6. **You should now see "Authorization required"**
-      7. Click **Review permissions**
-      8. Choose your Google account
-      9. Click **Advanced** → **Go to [Project Name] (unsafe)**
-      10. Click **Allow**
-      11. Run `testEmailAuth` again - it should work now
-
-      **Step 3: Verify It Works**
-
-      - After authorizing, run `testEmailAuth` again
-      - Check your email inbox (and spam folder)
-      - If you receive the email, permissions are working!
-
-      **Step 4: If Still Not Working**
-
-      - Make sure you're using the same Google account in Apps Script that owns the email
-      - Check if your Google account has 2FA enabled (shouldn't block this, but worth checking)
-      - Try a different email address to rule out email-specific issues
-      - Check Apps Script quota: **View** → **Execution log** → Look for quota errors
+    - Make sure you're using the same Google account in Apps Script that owns the email
+    - Check if your Google account has 2FA enabled (shouldn't block this, but worth checking)
+    - Try a different email address to rule out email-specific issues
+    - Check Apps Script quota: **View** → **Execution log** → Look for quota errors
 
 - **Want to send to multiple emails?**
 
@@ -691,16 +763,23 @@ Additional Notes: ${data.additionalNotes}
     - Avoid words like "Test", "Free", "Urgent", "Click here"
     - Use clear, professional subjects like "Tasmal X License Renewal Request"
 
-  - **Add reply-to address:**
+  - **Add reply-to address and BCC (send copy to submitter):**
 
     ```javascript
     MailApp.sendEmail({
     	to: 'service.engineer@olujohnsonbusinesstechnicalservices.com',
     	subject: 'New Tasmal X License Renewal Request',
     	body: emailBody,
-    	replyTo: data.email // Use form submitter's email
+    	replyTo: data.email, // Use form submitter's email for replies
+    	bcc: data.email // Send a copy to the form submitter (BCC keeps their email private)
     });
     ```
+
+    **Why BCC instead of CC?**
+
+    - **BCC (Blind Carbon Copy)**: The submitter gets a copy, but their email address is hidden from other recipients
+    - **CC (Carbon Copy)**: The submitter gets a copy, but everyone can see each other's email addresses
+    - **BCC is better for privacy** - the submitter can't see the service engineer's email, and vice versa
 
   - **Use GmailApp instead (often better deliverability):**
 
@@ -711,6 +790,7 @@ Additional Notes: ${data.additionalNotes}
     	emailBody,
     	{
     		replyTo: data.email,
+    		bcc: data.email, // Send a copy to the form submitter
     		name: 'Tasmal X License System'
     	}
     );
@@ -764,7 +844,7 @@ Additional Notes: ${data.additionalNotes}
     // Email failed but form submission continues
     console.error('Email error:', emailError);
   }
-  ```
+````
 
 ---
 

@@ -26,7 +26,7 @@
 	let formError = '';
 	let showForm = true;
 	let successMessageRef: HTMLDivElement;
-	let downloadSectionRef: HTMLDivElement;
+	let hardwareSectionRef: HTMLDivElement;
 
 	// Google Sheets via Apps Script configuration
 	// Get from environment variable (set in .env file)
@@ -36,10 +36,14 @@
 	$: if (formSubmitted) {
 		setTimeout(() => {
 			showForm = false;
-			// Scroll to download section after form collapses (higher position)
+			// Scroll to success message after form collapses (with offset to scroll higher)
 			setTimeout(() => {
-				if (downloadSectionRef) {
-					downloadSectionRef.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				if (successMessageRef) {
+					successMessageRef.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					// Scroll up a bit more for better visibility
+					setTimeout(() => {
+						window.scrollBy({ top: -100, behavior: 'smooth' });
+					}, 100);
 				}
 			}, 100);
 		}, 300); // Small delay to show submission animation
@@ -500,8 +504,8 @@ Additional Notes: ${data.additionalNotes}`;
 					</div>
 					<h4 class="mb-2 text-base font-bold sm:text-lg">2. Submit Request</h4>
 					<p class="text-sm text-gray-600 sm:text-base">
-						Complete the <strong>Official License Renewal Request</strong> form using either the downloadable
-						PDF or the online form below.
+						Complete the <strong>Official License Renewal Request</strong> form below. You'll receive
+						a confirmation email copy automatically for your records.
 					</p>
 				</div>
 
@@ -523,8 +527,8 @@ Additional Notes: ${data.additionalNotes}`;
 			</div>
 		</div>
 
-		<!-- Download Section -->
-		<div bind:this={downloadSectionRef} class="mb-8 rounded-lg bg-gray-50 p-4 sm:p-6">
+		<!-- Download Section - Commented out, using online form only -->
+		<!-- <div class="mb-8 rounded-lg bg-gray-50 p-4 sm:p-6">
 			<div class="mb-4 flex items-center">
 				<FileTextIcon class="mr-3 h-5 w-5 flex-shrink-0 text-purple-600 sm:h-6 sm:w-6" />
 				<h3 class="text-lg font-semibold sm:text-xl">Download Official Renewal Form</h3>
@@ -541,7 +545,7 @@ Additional Notes: ${data.additionalNotes}`;
 				<DownloadIcon class="mr-2 h-5 w-5" />
 				Download PDF Form
 			</a>
-		</div>
+		</div> -->
 
 		<!-- Online Form Section -->
 		<div class="mb-8 rounded-lg bg-white p-4 shadow-md sm:p-6">
@@ -689,7 +693,10 @@ Additional Notes: ${data.additionalNotes}`;
 					</div>
 
 					<!-- Hardware & System Identifiers Section -->
-					<div class="rounded-lg border-2 border-purple-200 bg-purple-50 p-4 sm:p-6">
+					<div
+						bind:this={hardwareSectionRef}
+						class="rounded-lg border-2 border-purple-200 bg-purple-50 p-4 sm:p-6"
+					>
 						<h4 class="mb-3 text-base font-semibold text-purple-900 sm:mb-4 sm:text-lg">
 							Hardware & System Identifiers
 						</h4>
