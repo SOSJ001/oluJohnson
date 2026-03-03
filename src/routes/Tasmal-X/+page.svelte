@@ -132,7 +132,7 @@ HARDWARE & SYSTEM IDENTIFIERS:
 - Installation Site / Branch: ${data.installationSite}
 
 CURRENT LICENSE DETAILS:
-- Requested License Term: ${data.licenseTerm} year(s)
+- Requested License Term: ${data.licenseTerm === '7d' ? '7 days' : `${data.licenseTerm} year(s)`}
 - Current Activation Key: ${data.currentLicense}
 - Current License Start Date: ${data.currentLicenseStartDate}
 - Current License Expiration Date: ${data.currentLicenseExpirationDate}
@@ -794,6 +794,7 @@ Additional Notes: ${data.additionalNotes}`;
 									class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-200 focus:outline-none sm:px-4 sm:text-base"
 								>
 									<option value="">Select license term</option>
+									<option value="7d">7 days</option>
 									<option value="1">1 year</option>
 									<option value="2">2 years</option>
 									<option value="3">3 years</option>
